@@ -14,7 +14,7 @@ export default function LandingPage() {
               <div className="flex flex-col gap-8 lg:w-1/2 text-center lg:text-left items-center lg:items-start">
                 <div className="flex flex-col gap-4">
                   <h1 className="text-slate-900 dark:text-slate-100 text-4xl md:text-6xl font-extrabold leading-[1.15] tracking-tight">
-                    당신의 아이디어를 <br /><span className="text-primary">클라우드</span>에
+                    당신의 아이디어를 <br /><span className="text-primary">클라우드</span>에!!!
                   </h1>
                   <p className="text-slate-600 dark:text-slate-400 text-lg md:text-xl font-medium leading-relaxed max-w-lg">
                     어디서든 메모하고, AI가 자동으로 정리해드립니다. 복잡한 생각들을 체계적으로 관리하세요.

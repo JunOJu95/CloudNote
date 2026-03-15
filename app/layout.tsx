@@ -3,7 +3,7 @@ import "./globals.css";
 import RootShell from "@/components/layout/RootShell";
 
 export const metadata: Metadata = {
-  title: "CloudNote - 당신의 아이디어를 클라우드에",
+  title: "CloudNote - 당신의 아이디어를 클라우드에!!!",
   description: "생각을 정리하는 새로운 방법",
 };
 

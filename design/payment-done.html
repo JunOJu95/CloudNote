@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&amp;family=Noto+Sans+KR:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007bff",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                        "success": "#28a745",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "Noto Sans KR", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 min-h-screen flex flex-col">
+<div class="flex-1 flex items-center justify-center p-4 md:p-8">
+<div class="max-w-[520px] w-full bg-white dark:bg-slate-900 rounded-xl shadow-xl overflow-hidden border border-slate-200 dark:border-slate-800">
+<div class="p-8 text-center border-b border-slate-100 dark:border-slate-800">
+<div class="mb-6 flex justify-center">
+<div class="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-success text-5xl">check_circle</span>
+</div>
+</div>
+<h1 class="text-2xl font-bold mb-2">결제가 완료되었습니다!</h1>
+<p class="text-primary font-medium">Pro 플랜이 활성화되었습니다</p>
+</div>
+<div class="p-8 space-y-4">
+<div class="flex justify-between items-center py-1">
+<span class="text-slate-500 dark:text-slate-400 text-sm">주문번호</span>
+<span class="font-medium text-sm">20231027-0001</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-slate-500 dark:text-slate-400 text-sm">결제 금액</span>
+<span class="font-bold text-sm">₩19,000</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-slate-500 dark:text-slate-400 text-sm">결제 수단</span>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-slate-400 text-base">credit_card</span>
+<span class="font-medium text-sm">신용카드 (****1234)</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-slate-500 dark:text-slate-400 text-sm">결제 일시</span>
+<span class="font-medium text-sm">2023년 10월 27일 14:30</span>
+</div>
+<div class="flex justify-between items-center py-1">
+<span class="text-slate-500 dark:text-slate-400 text-sm">다음 결제일</span>
+<span class="font-medium text-sm">2023년 11월 27일</span>
+</div>
+</div>
+<div class="px-8 pb-8 space-y-3">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">dashboard</span>
+<span>대시보드로 이동</span>
+</button>
+<button class="w-full bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 text-slate-900 dark:text-slate-100 font-bold py-3.5 rounded-lg transition-colors flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-xl">receipt_long</span>
+<span>영수증 다운로드</span>
+</button>
+</div>
+<div class="px-8 pb-8 text-center space-y-4">
+<div class="p-3 bg-slate-50 dark:bg-slate-800/50 rounded-lg">
+<p class="text-slate-500 dark:text-slate-400 text-xs leading-relaxed">
+                        결제 영수증이 등록하신 이메일로 발송되었습니다.<br/>
+                        메일을 받지 못하셨다면 스팸 메일함을 확인해주세요.
+                    </p>
+</div>
+<div class="flex flex-col items-center gap-1">
+<p class="text-slate-400 dark:text-slate-500 text-[11px]">문제가 발생했나요?</p>
+<a class="text-primary hover:underline text-xs font-medium" href="#">고객센터 문의하기</a>
+</div>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+
+<html lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>CloudNote - 사용자 대시보드</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#007bff",
+                        "background-light": "#f5f7f8",
+                        "background-dark": "#0f1923",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display">
+<!-- Top Navigation Bar -->
+<header class="sticky top-0 z-50 flex items-center justify-between border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 px-6 py-3">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-2 text-primary">
+<span class="material-symbols-outlined text-3xl font-bold">cloud_done</span>
+<h2 class="text-xl font-bold leading-tight tracking-tight text-slate-900 dark:text-white">CloudNote</h2>
+</div>
+<div class="hidden md:flex items-center">
+<label class="relative flex items-center">
+<span class="material-symbols-outlined absolute left-3 text-slate-400">search</span>
+<input class="w-64 rounded-lg border-none bg-slate-100 dark:bg-slate-800 pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/50" placeholder="메모 검색..." type="text"/>
+</label>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="flex h-10 w-10 items-center justify-center rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center overflow-hidden border border-slate-200 dark:border-slate-700">
+<img alt="User Avatar" class="h-full w-full object-cover" data-alt="사용자 프로필 아바타 이미지" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAwXQFDn5oMTvfHwcTIEZdtTrvX-rQmQXxb5-dDeuwmBzuESsNmXObFId5Fh1V_x6RlMgQj4YrgbEGqZP7S9qhZ5YobV9tQJUtwWiu_S5CsGzX_0VrakYpBo2Kl4wz3Pylkd34saXqWD3m6WKnj28izO35xdGPStNCi93g9-F9UZ-i3eVb6DyJHve4_ICtJMrqBSeTdvh3zEd-gBdpsk9ZijFgFcMil_gDoPCBGze3QmjmmGXYlQPFvwi2bivoDAF5ep2qF2Xcn_A"/>
+</div>
+</div>
+</header>
+<div class="flex min-h-[calc(100vh-65px)]">
+<!-- Sidebar -->
+<aside class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-4 hidden lg:block">
+<nav class="flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="font-medium">홈</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-medium">내 메모</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-medium">설정</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">card_membership</span>
+<span class="font-medium">구독 관리</span>
+</a>
+</nav>
+<div class="mt-auto pt-10 px-4">
+<div class="rounded-xl bg-gradient-to-br from-primary to-blue-600 p-4 text-white">
+<p class="text-xs font-semibold uppercase tracking-wider opacity-80">보관 용량</p>
+<p class="mt-1 text-lg font-bold">75% 사용 중</p>
+<div class="mt-3 h-1.5 w-full rounded-full bg-white/30">
+<div class="h-full w-3/4 rounded-full bg-white"></div>
+</div>
+<button class="mt-4 w-full rounded-lg bg-white py-2 text-sm font-bold text-primary hover:bg-slate-50">업그레이드</button>
+</div>
+</div>
+</aside>
+<!-- Main Content -->
+<main class="flex-1 p-6 md:p-10 overflow-y-auto">
+<div class="max-w-5xl mx-auto">
+<!-- Welcome Header -->
+<section class="mb-10">
+<h1 class="text-3xl font-black tracking-tight text-slate-900 dark:text-white">안녕하세요, 홍길동님! 👋</h1>
+<p class="mt-2 text-lg text-slate-500 dark:text-slate-400">현재 <span class="font-bold text-primary">Pro 플랜</span>을 이용 중입니다. 모든 프리미엄 기능을 자유롭게 사용하세요.</p>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Subscription & Usage -->
+<div class="lg:col-span-2 space-y-8">
+<!-- Subscription Info Card -->
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold">구독 정보</h2>
+<span class="rounded-full bg-green-100 px-3 py-1 text-xs font-bold text-green-700 dark:bg-green-900/30 dark:text-green-400 uppercase tracking-wide">활성 상태</span>
+</div>
+<div class="flex flex-col md:flex-row gap-6 items-center">
+<div class="flex-1 space-y-3 w-full">
+<div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+<span class="text-slate-500">현재 플랜</span>
+<span class="font-bold text-slate-900 dark:text-white">Pro 플랜</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+<span class="text-slate-500">다음 결제일</span>
+<span class="font-medium">2023년 12월 24일</span>
+</div>
+<div class="flex justify-between border-b border-slate-100 dark:border-slate-800 pb-2">
+<span class="text-slate-500">결제 금액</span>
+<span class="font-medium">₩9,900 / 월</span>
+</div>
+<div class="pt-4 flex gap-3">
+<button class="flex-1 rounded-lg bg-primary py-2.5 text-sm font-bold text-white hover:bg-blue-600">플랜 변경</button>
+<button class="flex-1 rounded-lg bg-slate-100 dark:bg-slate-800 py-2.5 text-sm font-bold text-slate-600 dark:text-slate-300 hover:bg-slate-200">구독 취소</button>
+</div>
+</div>
+<div class="w-full md:w-48 h-32 rounded-xl bg-slate-50 dark:bg-slate-800 flex items-center justify-center border border-dashed border-slate-200 dark:border-slate-700" style="background-image: linear-gradient(135deg, #007bff22 0%, #007bff00 100%);">
+<span class="material-symbols-outlined text-4xl text-primary/40">credit_card</span>
+</div>
+</div>
+</div>
+<!-- Usage Progress Section -->
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm">
+<h2 class="text-xl font-bold mb-6">이번 달 사용량</h2>
+<div class="space-y-6">
+<!-- Progress Item -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">note_add</span> 메모 개수
+                                        </span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">1,240 / 5,000</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-800">
+<div class="h-full w-[24.8%] rounded-full bg-primary"></div>
+</div>
+</div>
+<!-- Progress Item -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">database</span> 저장공간
+                                        </span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">7.5GB / 10GB</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-800">
+<div class="h-full w-[75%] rounded-full bg-primary"></div>
+</div>
+</div>
+<!-- Progress Item -->
+<div>
+<div class="flex justify-between mb-2">
+<span class="text-sm font-medium text-slate-700 dark:text-slate-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-sm">auto_awesome</span> AI 요약 횟수
+                                        </span>
+<span class="text-sm font-bold text-slate-900 dark:text-white">42 / 100</span>
+</div>
+<div class="h-2 w-full rounded-full bg-slate-100 dark:bg-slate-800">
+<div class="h-full w-[42%] rounded-full bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Recent Activity -->
+<div class="lg:col-span-1">
+<div class="rounded-2xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-6 shadow-sm h-full">
+<div class="flex items-center justify-between mb-6">
+<h2 class="text-xl font-bold">최근 활동</h2>
+<button class="text-sm text-primary font-bold hover:underline">모두 보기</button>
+</div>
+<div class="space-y-6">
+<!-- Activity Item -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">edit_note</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">메모 '프로젝트 기획안' 수정</p>
+<p class="text-xs text-slate-500">2시간 전</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-500">
+<span class="material-symbols-outlined">auto_stories</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">AI 요약 완료: 주간 회의록</p>
+<p class="text-xs text-slate-500">5시간 전</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-500">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">새 메모 '장보기 리스트' 생성</p>
+<p class="text-xs text-slate-500">어제</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-slate-50 dark:bg-slate-800 flex items-center justify-center text-slate-400">
+<span class="material-symbols-outlined">cloud_upload</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">첨부 파일 3개 업로드 완료</p>
+<p class="text-xs text-slate-500">2일 전</p>
+</div>
+</div>
+<!-- Activity Item -->
+<div class="flex gap-4">
+<div class="flex-shrink-0 w-10 h-10 rounded-full bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-500">
+<span class="material-symbols-outlined">payments</span>
+</div>
+<div class="flex-1">
+<p class="text-sm font-bold text-slate-900 dark:text-white">정기 결제 예정 알림</p>
+<p class="text-xs text-slate-500">3일 전</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</body></html>

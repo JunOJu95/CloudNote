@@ -3,8 +3,34 @@ import "./globals.css";
 import RootShell from "@/components/layout/RootShell";
 
 export const metadata: Metadata = {
-  title: "CloudNote - 당신의 아이디어를 클라우드에!!!",
-  description: "생각을 정리하는 새로운 방법",
+  title: {
+    template: "%s | CloudNote",
+    default: "CloudNote - 당신의 아이디어를 클라우드에!!!",
+  },
+  description: "생각을 정리하는 새로운 방법. 당신의 복잡한 아이디어를 클라우드에 안전하게 보관하세요.",
+  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
+  openGraph: {
+    title: "CloudNote - 당신의 아이디어를 클라우드에!!!",
+    description: "생각을 정리하는 새로운 방법. 당신의 복잡한 아이디어를 클라우드에 안전하게 보관하세요.",
+    url: "/",
+    siteName: "CloudNote",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "CloudNote - 생각을 정리하는 새로운 방법",
+      },
+    ],
+    locale: "ko_KR",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CloudNote - 당신의 아이디어를 클라우드에!!!",
+    description: "생각을 정리하는 새로운 방법. 당신의 복잡한 아이디어를 클라우드에 안전하게 보관하세요.",
+    images: ["/og-image.png"],
+  },
 };
 
 export default function RootLayout({
